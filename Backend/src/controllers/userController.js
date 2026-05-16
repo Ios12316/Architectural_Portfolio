@@ -12,11 +12,10 @@ export const signupUser = async (req, res) => {
         if(existingUser) {
             return res.status(400).json({message: "Email already exists"});
         }
-        const hashedPassword = await bcrypt.hash(password, 10);
         const newUser = await User.create({
             fullName,
             email,
-            password: hashedPassword
+            password
         });
         const token = generateToken(newUser._id)
         res.cookie('token', token, {maxAge: 24 * 60 * 60 * 1000, httpOnly:true, secure:process.env.NODE_ENV === 'production', sameSite:'lax'});
