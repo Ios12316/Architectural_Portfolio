@@ -45,7 +45,7 @@ export const loginUser = async (req, res) => {
     }
 }
 
-export async function profile(req, res) {
+export const getUserProfile = async (req, res) => {
     try {
         if (!req.user) {
             return res.status(401).json({ message: "Not authenticated" });
