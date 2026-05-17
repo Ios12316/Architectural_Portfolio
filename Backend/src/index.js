@@ -32,7 +32,7 @@ mongoose.connect(process.env.MONGO_URI)
 .catch((err) => console.log(err));
 
 app.get("/", (req, res) => {
-    res.send("API is running...");
+    res.send("My Project is Live now");
 })
 
 export default app;
