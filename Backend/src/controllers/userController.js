@@ -45,8 +45,24 @@ export const loginUser = async (req, res) => {
     }
 }
 
-export const getUserProfile = async (req, res) => {
-    res.status(200).json({message: "Welcome", fullName: req.user.fullName})
+export async function profile(req, res) {
+    try {
+        if (!req.user) {
+            return res.status(401).json({ message: "Not authenticated" });
+          }
+          return res.status(200).json({
+            message: "Profile data",
+            user: req.user
+          });
+    } catch (err) {
+        if(err instanceof Error) {
+            console.error(err.message)
+            res.status(500).json({
+                message: "Server error",
+                errorMessage: err.message
+            })
+        }
+    }
 }
 
 export const logoutUser = async (req, res) => {
