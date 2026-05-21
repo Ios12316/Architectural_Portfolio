@@ -5,7 +5,7 @@ const authenticationMiddleware = async (req, res, next) => {
     try {
         const secretKey = process.env.JWT_SECRET;
         const token = req.cookies.token
-        if(!token) return res.status(404).json({message: 'Not found'}) 
+        if(!token) return res.status(401).json({message: 'Not authenticated'}) 
         const decodedToken = jwt.verify(token, secretKey)
         if(!decodedToken) return res.status(401).json({message: 'Unauthorized'})
         req.user = await User.findById(decodedToken.id).select("-password")
