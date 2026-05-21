@@ -11,8 +11,13 @@ const app = express();
 
 app.use(express.json());
 app.use(cookieParser());
+const allowedOrigins = ["https://idowuolakunleproject.vercel.app"];
+if (process.env.NODE_ENV !== "production") {
+    allowedOrigins.push("http://localhost:5173", "http://localhost:5174");
+}
+
 app.use(cors({
-    origin: "https://idowuolakunleproject.vercel.app",
+    origin: allowedOrigins,
     credentials: true
 }));
 
@@ -26,5 +31,12 @@ mongoose.connect(process.env.MONGO_URI)
 app.get("/", (req, res) => {
     res.send("My Project is Live now");
 })
+
+const PORT = process.env.PORT || 3000;
+if (!process.env.VERCEL) {
+    app.listen(PORT, () => {
+        console.log(`✅ Server running on port ${PORT}`);
+    });
+}
 
 export default app;
