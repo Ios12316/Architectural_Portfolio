@@ -11,7 +11,7 @@ const app = express();
 
 app.use(express.json());
 app.use(cookieParser());
-const allowedOrigins = ["https://idowuolakunleproject.vercel.app"];
+const allowedOrigins = ["https://idowuolakunleproject.vercel.app", "https://localhost:5173"];
 if (process.env.NODE_ENV !== "production") {
     allowedOrigins.push("http://localhost:5173", "http://localhost:5174");
 }
