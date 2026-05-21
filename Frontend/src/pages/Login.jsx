@@ -46,14 +46,14 @@ export default function Login () {
             <form onSubmit={handleSubmit} className="w-full max-w-md space-y-6">
                 <div>
                     <h1 className="text-4xl font-light tracking-tight">Welcome Back</h1>
-                    <p className="text-gray-500 mt-3 leading-relaxed">Login to continue</p>
+                    <p className="text-black mt-3 leading-relaxed">Login to continue</p>
                 </div>
                 <input type="email" name="email" placeholder="Email Address" value={formData.email} onChange={handleChange} className="w-full border border-gray-300 p-4 outline-non" />
                 <input type="password" name="password" placeholder="Password" value={formData.password} onChange={handleChange} className="w-full border border-gray-300 p-4 outline-non" />
                 <button type="submit" disabled={loading} className="w-full bg-black text-white p-4 hover:bg-blue-800 transition">
                     {loading ? "Logging in..." : "Login"}
                 </button>
-                <p>Don't have an account? <Link to="/signup" className="text-blue-600 hover:underline">Signup</Link></p>
+                <p>Don't have an account? <Link to="/signup" className="text-white hover:text-blue-600">Signup</Link></p>
             </form>
 
         </main>

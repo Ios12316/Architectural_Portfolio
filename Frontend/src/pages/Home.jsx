@@ -8,19 +8,44 @@ import Animation from "../components/animination.jsx"
 
 export default function Home () {
   return (
-    <main className="bg-white text-black pt-24">
+    <main className="bg-[#f5f3ef] text-black pt-24">
 
         <Navbar />
 
         <Animation>
-        <section className="h-screen flex items-center px-6 md:px-16">
-            <div>
-                <h1 className="editorial-heading text-5xl md:text-8xl font-light leading-tight max-w-5xl"> Designing spaces that shape the future.
-                </h1>
-                <p className="mt-6 text-lg text-gray-600 max-w-xl"> An architectural portfolio exploring modern urban design,
-            sustainability, and human-centered experiences.
-            </p>
+        <section className="relative h-screen overflow-hidden">
+
+            <img
+            src="https://images.unsplash.com/photo-1511818966892-d7d671e672a2?q=80&w=1600&auto=format&fit=crop"
+            alt="Architecture"
+            className="absolute inset-0 w-full h-full object-cover"
+            />
+
+            <div className="absolute inset-0 bg-black/40"></div>
+
+            <div className="relative z-10 h-full flex items-end px-6 md:px-16 pb-24">
+
+                <div className="max-w-5xl">
+
+                    <p className="uppercase tracking-[0.4em] text-white/70 text-sm mb-6">
+                        Architectural Portfolio
+                    </p>
+
+                    <h1 className="editorial-heading text-white text-5xl md:text-8xl font-light leading-[0.95] max-w-5xl">
+                        Designing spaces
+                        that shape
+                        the future.
+                    </h1>
+
+                    <p className="mt-8 text-lg text-white/80 max-w-xl leading-relaxed">
+                        An architectural portfolio exploring modern urban design,
+                        sustainability, and human-centered experiences.
+                    </p>
+
+                </div>
+
             </div>
+
         </section>
         </Animation>
 

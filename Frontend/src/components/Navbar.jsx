@@ -9,18 +9,16 @@ export default function Navbar() {
 
     useEffect(() => {
         const handleScroll = () => {
-            if(window.scrollY > 50) {
-                setScrolled(true)
-            } else {
-                setScrolled(false)
-            }
-        }
+            setScrolled(window.scrollY > 50);
+        };
         window.addEventListener("scroll", handleScroll);
         return () => window.removeEventListener("scroll", handleScroll)
     }, [])
+    
 
     return (
-        <header className={`fixed top-0 left-0 w-full z-50 ${scrolled ? "bg-white/70 backdrop-blur-md" : "bg-white/30 backdrop-blur-0"}`}>
+        <header className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-[#f5f3ef] ${scrolled ? "border-b border-black/5 shadow-sm" : "border-b border-transparent"}`}>
+            
             
             <nav className="flex items-center justify-between px-6 md:px-16 py-6">
 
@@ -33,7 +31,6 @@ export default function Navbar() {
                     <Link to="/login" className="hover:opacity-60 duration-300"> Login </Link>
                     <Link to="/signup" className="hover:opacity-60 duration-300"> Signup </Link>
                 
-                    <Link to="/dashboard" className="hover:opacity-60 duration-300"> Dashboard </Link>
                 </div>
 
             </nav>
