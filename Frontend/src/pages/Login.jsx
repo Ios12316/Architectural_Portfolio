@@ -53,7 +53,7 @@ export default function Login () {
                 <button type="submit" disabled={loading} className="w-full bg-black text-white p-4 hover:bg-blue-800 transition">
                     {loading ? "Logging in..." : "Login"}
                 </button>
-                <p>Don't have an account? <Link to="/signup" className="text-white hover:text-blue-600">Signup</Link></p>
+                <p>Don't have an account? <Link to="/signup" className="text-black">Signup</Link></p>
             </form>
 
         </main>
