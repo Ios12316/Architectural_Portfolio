@@ -11,14 +11,10 @@ const app = express();
 
 app.use(express.json());
 app.use(cookieParser());
-const allowedOrigins = ["https://idowuolakunleproject.vercel.app"];
-if (process.env.NODE_ENV !== "production") {
-    allowedOrigins.push("http://localhost:5173", "http://localhost:5174");
-}
 
 
 app.use(cors({
-    origin: allowedOrigins,
+    origin: ["https://idowuolakunleproject.vercel.app", "http://localhost:5173", "http://localhost:5174"],
     credentials: true
 }));
 
