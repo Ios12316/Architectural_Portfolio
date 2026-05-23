@@ -23,13 +23,13 @@ export default function Navbar() {
             <nav className="flex items-center justify-between px-6 md:px-16 py-6">
 
                 <Link to="/" className="text-xl md:text-2xl tracking-wide font-light">
-                ARCHIVE
+                IDOWU OLAKUNLE SAMUEL(IOS)
                 </Link>
 
                 <div className="hidden md:flex items-center gap-10 text-sm uppercase tracking-widest">
-                    <Link to="/" className="hover:opacity-60 duration-300"> Home </Link>
-                    <Link to="/login" className="hover:opacity-60 duration-300"> Login </Link>
-                    <Link to="/signup" className="hover:opacity-60 duration-300"> Signup </Link>
+                    <a href="/" className="hover:bg-blue-800 transition">Home</a>
+                    <Link to="/login" className="hover:bg-blue-800 transition"> Login </Link>
+                    <Link to="/signup" className="hover:bg-blue-800 transition"> Signup </Link>
                 
                 </div>
 
