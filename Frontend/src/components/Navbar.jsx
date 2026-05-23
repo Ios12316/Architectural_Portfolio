@@ -26,7 +26,7 @@ export default function Navbar() {
                 IDOWU OLAKUNLE SAMUEL(IOS)
                 </Link>
 
-                <div className="hidden md:flex items-center gap-10 text-sm uppercase tracking-widest">
+                <div className="flex md:flex items-center gap-10 text-sm uppercase tracking-widest">
                     <a href="/" className="hover:bg-blue-800 transition">Home</a>
                     <Link to="/login" className="hover:bg-blue-800 transition"> Login </Link>
                     <Link to="/signup" className="hover:bg-blue-800 transition"> Signup </Link>
